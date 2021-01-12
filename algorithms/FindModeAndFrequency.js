@@ -7,18 +7,22 @@
 
 function mode(numbers) {
     let mode = 0;
-    let frequencyOfMode = 0;
     let count = {}; //initialize a hash
-    numbers.forEach((e) => {
-        //loop through each number
-        if (!count[e]) {
-            //if the number is not in the hash
-            count[e] = 0; //store the number in the hash and give it a value of 0 since it has yet to be seen again
+    for (let i = 0; i < numbers.length; i++) {
+        let number = numbers[i];
+        if (!count[number]) {
+            count[number] = 1;
         } else {
-            count[e]++; //if the number is already in the has, increment its value
+            count[number]++;
         }
-    });
+    }
     console.log(count);
+
+    mode = Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b));
+
+    let freq = count[mode];
+
+    return `Mode = ${mode}, Frequency of mode = ${freq}`;
 }
 
-mode([1, 2, 3, 6, 10, 3, 5, 6, 3, 3]);
+console.log(mode([1, 2, 3, 6, 10, 3, 5, 6, 3, 3]));

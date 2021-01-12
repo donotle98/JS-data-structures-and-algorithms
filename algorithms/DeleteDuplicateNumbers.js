@@ -5,31 +5,31 @@
 const LinkedList = require('../data-structures/LinkedList');
 function DupNumbers() {
     let llist = new LinkedList();
+    llist.addToHead(13);
     llist.addToHead(20);
     llist.addToHead(13);
-    llist.addToHead(13);
     llist.addToHead(11);
     llist.addToHead(11);
+    llist.addToHead(20);
     llist.addToHead(11);
     llist.printList();
 
-    temp = llist.head;
+    let temp = llist.head;
+    let newList = new LinkedList();
+    let obj = Object.create(null);
     if (!temp) {
         return;
     }
-    while (temp.next) {
-        //loop through linked list as long as the next value is not null
-        if (temp.data === temp.next.data) {
-            //if the current nodes data equal the next nodes data
-            let newTemp = temp.next.next; //assign the next.next node to a new temp variable
-            temp.next = null; //the next node is now assigned null
-            temp.next = newTemp; //the next.next is now the next node
+    while (temp) {
+        if (!obj[temp.data]) {
+            obj[temp.data] = 1;
+            newList.addToHead(temp.data);
         } else {
-            //if the two nodes in front are not equal
-            temp = temp.next; //assign the temp head to the next node in line
+            temp = temp.next;
         }
     }
-    return llist.printList();
+
+    console.log(newList.printList());
 }
 
 DupNumbers();

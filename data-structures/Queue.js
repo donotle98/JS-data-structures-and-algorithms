@@ -12,6 +12,8 @@
 //Enqueueing onto a full queue causes a queue overflow
 //Queues process data First In, First Out (FIFO)
 
+//Queues are usually implemented with linked list or arrays
+
 const LinkedList = require('./LinkedList');
 
 class Queue {
