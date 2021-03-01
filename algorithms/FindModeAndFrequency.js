@@ -6,9 +6,13 @@
 // - Output: `Mode = 3, Frequency of mode = 4`
 
 function mode(numbers) {
+    //O(n)
     let mode = 0;
+
     let count = {}; //initialize a hash
+
     for (let i = 0; i < numbers.length; i++) {
+        //O(n)
         let number = numbers[i];
         if (!count[number]) {
             count[number] = 1;
@@ -16,11 +20,12 @@ function mode(numbers) {
             count[number]++;
         }
     }
+
     console.log(count);
 
-    mode = Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b));
+    mode = Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b)); //O(n)
 
-    let freq = count[mode];
+    let freq = count[mode]; //O(1)
 
     return `Mode = ${mode}, Frequency of mode = ${freq}`;
 }

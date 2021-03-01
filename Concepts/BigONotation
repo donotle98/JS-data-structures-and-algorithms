@@ -8,7 +8,7 @@ Big Ω(omega) specifically describes the best-case scenario.
 The different common runtimes from fastest to slowest are: Θ(1), Θ(log N), Θ(N), Θ(N log N), Θ(N^2), Θ(2^N), Θ(N!).
 
 
-Examples: 
+Examples:
 
  - O(1) describes an algorithm that will always execute in the same time (or space) regardless of the size of the input data set.
 
@@ -33,7 +33,7 @@ bool IsFirstElementNull(IList<string> elements)
 
 
 
- - O(N2) represents an algorithm whose performance is directly proportional to the square of the size of the input data set
+ - O(N^2) represents an algorithm whose performance is directly proportional to the square of the size of the input data set
         Deeper nested iterations will result in O(N3), O(N4) etc.
 
 bool ContainsDuplicates(IList<string> elements)
@@ -54,7 +54,7 @@ bool ContainsDuplicates(IList<string> elements)
 
 
 
- - O(2N) denotes an algorithm whose growth doubles with each addition to the input data set.
+ - O(2^N) denotes an algorithm whose growth doubles with each addition to the input data set.
             The growth curve of an O(2N) function is exponential - starting off very shallow, then rising meteorically.
 
 int Fibonacci(int number)

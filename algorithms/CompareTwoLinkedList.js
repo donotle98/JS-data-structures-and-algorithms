@@ -28,27 +28,36 @@ secondList.addToHead('b');
 secondList.addToHead('o');
 
 function getCountOfList(list) {
-    let temp = list.head;
-    let count = 0;
+    // O(n)
+    let temp = list.head; //O(1)
+    let count = 0; //O(1)
     while (temp.next) {
-        count++;
-        temp = temp.next;
+        //O(n + 1)
+        count++; //O(n)
+        temp = temp.next; //O(n)
     }
-    return count;
+    return count; //O(3n + 3);
 }
+
 function compare(firstlist, secondlist) {
-    let firstCount = getCountOfList(firstlist);
-    let secondCount = getCountOfList(secondlist);
+    //O(n)
+    let firstCount = getCountOfList(firstlist); //O(n)
+    let secondCount = getCountOfList(secondlist); //O(m)
 
     if (firstCount > secondCount) {
+        //O(1)
         return 1;
     }
     if (firstCount < secondCount) {
+        //O(1)
         return -1;
     }
     if (firstCount === secondCount) {
+        //O(1)
         return 0;
     }
+
+    // O(n + m + 3)
 }
 
 console.log(compare(firstList, secondList));

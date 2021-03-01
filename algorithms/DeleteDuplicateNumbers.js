@@ -4,8 +4,9 @@
 
 const LinkedList = require('../data-structures/LinkedList');
 function DupNumbers() {
+    //O(n)
     let llist = new LinkedList();
-    llist.addToHead(13);
+    llist.addToHead(13); //O(1)
     llist.addToHead(20);
     llist.addToHead(13);
     llist.addToHead(11);
@@ -14,13 +15,15 @@ function DupNumbers() {
     llist.addToHead(11);
     llist.printList();
 
-    let temp = llist.head;
-    let newList = new LinkedList();
-    let obj = Object.create(null);
+    let temp = llist.head; //O(1)
+    let newList = new LinkedList(); //O(1)
+    let obj = Object.create(null); //O(1)
     if (!temp) {
+        //O(1)
         return;
     }
     while (temp) {
+        //O(n)
         if (!obj[temp.data]) {
             obj[temp.data] = 1;
             newList.addToHead(temp.data);
